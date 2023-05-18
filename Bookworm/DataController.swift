@@ -10,6 +10,11 @@ import SwiftUI
 
 class DataController: ObservableObject {
     let container = NSPersistentContainer(name: "Bookworm")
+    @Published var dataDeleted = false {
+        didSet {
+            UserDefaults.standard.set(dataDeleted, forKey: "dataDeletedKey")
+        }
+    }
     var result: JSONList?
     
     init() {
@@ -18,6 +23,7 @@ class DataController: ObservableObject {
                 print("Core Data failed to load: \(error.localizedDescription)")
             }
         }
+        dataDeleted = UserDefaults.standard.bool(forKey: "dataDeletedKey")
     }
     
     //MARK: - Fetching Book Entity from CoreData
@@ -61,7 +67,7 @@ class DataController: ObservableObject {
                         let existingBooks = try container.viewContext.fetch(fetchRequest)
                         if let existingBook = existingBooks.first {
                             // Book already exists, do not save changes
-                            print("Book with title \(existingBook.title ?? "") and author \(existingBook.author ?? "") already exists in CoreData. Skipping...")
+                            print("\(existingBook.title ?? "") already exists in CoreData. Skipping...")
                             continue
                         }
                     }
@@ -77,6 +83,8 @@ class DataController: ObservableObject {
                     newBook.author = bookData.author
                     newBook.rating = bookData.rating
                     newBook.review = bookData.review
+                    
+                    dataDeleted = false
                 }
             }
             else {
@@ -94,6 +102,27 @@ class DataController: ObservableObject {
         }
         catch {
             print("Failed to save books to CoreData: \(error)")
+        }
+    }
+    
+    //MARK: - Delete Request
+    
+    func deleteAllRequest() {
+        // Create a fetch request to fetch all objects of the "Book" entity
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Book")
+        
+        // Create a batch delete request with the fetch request
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            // Execute the batch delete request
+            try container.viewContext.execute(batchDeleteRequest)
+            try container.viewContext.save()
+            dataDeleted = true // Set the flag to true to trigger UI update
+            print("All data deleted from CoreData successfully")
+        }
+        catch {
+            print("Failed to delete data from CoreData: \(error)")
         }
     }
 }
