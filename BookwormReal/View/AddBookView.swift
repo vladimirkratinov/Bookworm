@@ -13,11 +13,11 @@ struct AddBookView: View {
     
     @State private var title = ""
     @State private var author = ""
-    @State private var rating = 3
-    @State private var genre = ""
+    @State private var rating = 0
+    @State private var selectedOption = 0
     @State private var review = ""
     
-    let genres = [
+    private let options = [
         "Fiction",
         "Fantasy",
         "Horror",
@@ -36,15 +36,16 @@ struct AddBookView: View {
                     TextField("Name of book", text: $title)
                     TextField("Author's name", text: $author)
                     
-                    Picker("Genre", selection: $genre) {
-                        ForEach(genres, id: \.self) {
-                            Text($0)
+                    Picker("Genre", selection: $selectedOption) {
+                        ForEach(0..<options.count, id: \.self) { index in
+                            Text(options[index]).tag(index)
                         }
                     }
                 }
                 
                 Section {
                     TextEditor(text: $review)
+                        
                     RatingView(rating: $rating)
                 } header: {
                     Text("Write a review")
@@ -58,9 +59,9 @@ struct AddBookView: View {
                         newBook.title = title
                         newBook.author = author
                         newBook.rating = Int16(rating)
-                        newBook.genre = genre
+                        newBook.genre = options[selectedOption]
                         newBook.review = review
-                        
+
                         try? moc.save()
                         dismiss()
                     }

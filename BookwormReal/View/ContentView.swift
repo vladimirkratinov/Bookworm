@@ -82,9 +82,14 @@ struct ContentView: View {
     func fetchBooks() {
             if let fetchedBooks = dataController.fetchBooks() {
                 fetchedBooksList = fetchedBooks
-                for book in fetchedBooksList {
-                    print("Title: \(book.title!)")
-                    print("Image: \(book.genre!)")
+                
+                if !fetchedBooksList.isEmpty {
+                    fetchedBooksList.forEach {
+                        print("Title: \($0.title!)")
+                        print("Image: \($0.genre!)")
+                    }
+                } else {
+                    print("Fetched Book List is Empty!")
                 }
             }
         }

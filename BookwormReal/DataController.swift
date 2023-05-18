@@ -10,6 +10,7 @@ import Foundation
 
 class DataController: ObservableObject {
     let container = NSPersistentContainer(name: "Bookworm")
+    static let shared = DataController()
     
     init() {
         container.loadPersistentStores { description, error in
@@ -19,8 +20,9 @@ class DataController: ObservableObject {
         }
     }
     
+    /// Fetching Book Entity from CoreData
     func fetchBooks() -> [Book]? {
-            let request: NSFetchRequest<Book> = Book.fetchRequest() // Replace "Book" with the actual name of your entity
+            let request: NSFetchRequest<Book> = Book.fetchRequest()
             
             do {
                 let books = try container.viewContext.fetch(request)
