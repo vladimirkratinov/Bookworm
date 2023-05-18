@@ -17,8 +17,6 @@ struct ContentView: View {
     ]) var books: FetchedResults<Book>
     
     @EnvironmentObject var dataController: DataController
-    @State private var fetchedBooksList: [Book] = []
-    
     @State private var showingAddScreen = false
     
     var body: some View {
@@ -48,25 +46,51 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     EditButton()
-                }
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showingAddScreen.toggle()
-                    } label: {
-                        Label("Add Book", systemImage: "plus")
+                    }
+                    
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            showingAddScreen.toggle()
+                        } label: {
+                            Label("Add Book", systemImage: "plus")
+                        }
                     }
                 }
-            }
-            .sheet(isPresented: $showingAddScreen) {
-                AddBookView()
-            }
+                .sheet(isPresented: $showingAddScreen) {
+                    AddBookView()
+                }
             
             Button {
-                fetchBooks()
+                dataController.fetchBooks()
+                dataController.fetchJSON()
             } label: {
                 Text("Fetch CoreData")
             }
+            
+            Button {
+                deleteAllRequest()
+            } label: {
+                Text("Delete All")
+            }
+        }
+    }
+    
+    //MARK: - Methods
+    
+    func deleteAllRequest() {
+        // Create a fetch request to fetch all objects of the "Book" entity
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Book")
+        
+        // Create a batch delete request with the fetch request
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            // Execute the batch delete request
+            try moc.execute(batchDeleteRequest)
+            print("All data deleted from CoreData successfully")
+        }
+        catch {
+            print("Failed to delete data from CoreData: \(error)")
         }
     }
     
@@ -75,25 +99,8 @@ struct ContentView: View {
             let book = books[offset]
             moc.delete(book)
         }
-        
         try? moc.save()
     }
-    
-    func fetchBooks() {
-            if let fetchedBooks = dataController.fetchBooks() {
-                fetchedBooksList = fetchedBooks
-                
-                if !fetchedBooksList.isEmpty {
-                    fetchedBooksList.forEach {
-                        print("Title: \($0.title!)")
-                        print("Image: \($0.genre!)")
-                    }
-                } else {
-                    print("Fetched Book List is Empty!")
-                }
-            }
-        }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

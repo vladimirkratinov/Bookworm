@@ -22,6 +22,8 @@ struct AddBookView: View {
         "Fantasy",
         "Horror",
         "Kids",
+        "Dystopian",
+        "Classic",
         "Mystery",
         "Poetry",
         "Romance",
