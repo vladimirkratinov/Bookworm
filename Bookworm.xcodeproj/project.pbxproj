@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F70415FE2A15444000735334 /* BookwormReal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookwormReal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F70415FE2A15444000735334 /* Bookworm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookworm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70416012A15444000735334 /* BookwormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookwormApp.swift; sourceTree = "<group>"; };
 		F70416032A15444000735334 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F70416052A15444100735334 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		F70415F52A15444000735334 = {
 			isa = PBXGroup;
 			children = (
-				F70416002A15444000735334 /* BookwormReal */,
+				F70416002A15444000735334 /* Bookworm */,
 				F70415FF2A15444000735334 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,12 +58,12 @@
 		F70415FF2A15444000735334 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F70415FE2A15444000735334 /* BookwormReal.app */,
+				F70415FE2A15444000735334 /* Bookworm.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F70416002A15444000735334 /* BookwormReal */ = {
+		F70416002A15444000735334 /* Bookworm */ = {
 			isa = PBXGroup;
 			children = (
 				F70416012A15444000735334 /* BookwormApp.swift */,
@@ -73,7 +73,7 @@
 				F7B896C82A15D6230064DE3F /* Info.plist */,
 				F70416072A15444100735334 /* Preview Content */,
 			);
-			path = BookwormReal;
+			path = Bookworm;
 			sourceTree = "<group>";
 		};
 		F70416072A15444100735334 /* Preview Content */ = {
@@ -109,9 +109,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F70415FD2A15444000735334 /* BookwormReal */ = {
+		F70415FD2A15444000735334 /* Bookworm */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F704160C2A15444100735334 /* Build configuration list for PBXNativeTarget "BookwormReal" */;
+			buildConfigurationList = F704160C2A15444100735334 /* Build configuration list for PBXNativeTarget "Bookworm" */;
 			buildPhases = (
 				F70415FA2A15444000735334 /* Sources */,
 				F70415FB2A15444000735334 /* Frameworks */,
@@ -121,9 +121,9 @@
 			);
 			dependencies = (
 			);
-			name = BookwormReal;
+			name = Bookworm;
 			productName = Bookworm;
-			productReference = F70415FE2A15444000735334 /* BookwormReal.app */;
+			productReference = F70415FE2A15444000735334 /* Bookworm.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -141,7 +141,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F70415F92A15444000735334 /* Build configuration list for PBXProject "BookwormReal" */;
+			buildConfigurationList = F70415F92A15444000735334 /* Build configuration list for PBXProject "Bookworm" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -154,7 +154,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F70415FD2A15444000735334 /* BookwormReal */,
+				F70415FD2A15444000735334 /* Bookworm */,
 			);
 		};
 /* End PBXProject section */
@@ -312,11 +312,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BookwormReal/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Bookworm/Preview Content\"";
 				DEVELOPMENT_TEAM = 53V48VAMPV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BookwormReal/Info.plist;
+				INFOPLIST_FILE = Bookworm/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Bookworm;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -327,7 +327,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vladimirkratinov.BookwormReal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladimirkratinov.Bookworm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -342,11 +342,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BookwormReal/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Bookworm/Preview Content\"";
 				DEVELOPMENT_TEAM = 53V48VAMPV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BookwormReal/Info.plist;
+				INFOPLIST_FILE = Bookworm/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Bookworm;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -357,7 +357,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vladimirkratinov.BookwormReal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vladimirkratinov.Bookworm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -368,7 +368,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F70415F92A15444000735334 /* Build configuration list for PBXProject "BookwormReal" */ = {
+		F70415F92A15444000735334 /* Build configuration list for PBXProject "Bookworm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F704160A2A15444100735334 /* Debug */,
@@ -377,7 +377,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F704160C2A15444100735334 /* Build configuration list for PBXNativeTarget "BookwormReal" */ = {
+		F704160C2A15444100735334 /* Build configuration list for PBXNativeTarget "Bookworm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F704160D2A15444100735334 /* Debug */,

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F70415FD2A15444000735334"
-               BuildableName = "BookwormReal.app"
-               BlueprintName = "BookwormReal"
-               ReferencedContainer = "container:BookwormReal.xcodeproj">
+               BuildableName = "Bookworm.app"
+               BlueprintName = "Bookworm"
+               ReferencedContainer = "container:Bookworm.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F70415FD2A15444000735334"
-            BuildableName = "BookwormReal.app"
-            BlueprintName = "BookwormReal"
-            ReferencedContainer = "container:BookwormReal.xcodeproj">
+            BuildableName = "Bookworm.app"
+            BlueprintName = "Bookworm"
+            ReferencedContainer = "container:Bookworm.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F70415FD2A15444000735334"
-            BuildableName = "BookwormReal.app"
-            BlueprintName = "BookwormReal"
-            ReferencedContainer = "container:BookwormReal.xcodeproj">
+            BuildableName = "Bookworm.app"
+            BlueprintName = "Bookworm"
+            ReferencedContainer = "container:Bookworm.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
