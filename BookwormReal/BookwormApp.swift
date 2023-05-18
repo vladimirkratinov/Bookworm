@@ -15,6 +15,7 @@ struct BookwormApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
+                .environmentObject(dataController) // Provide the DataController as an environment object
         }
     }
 }

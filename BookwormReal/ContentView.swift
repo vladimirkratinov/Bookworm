@@ -6,13 +6,18 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
+    
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.title),
         SortDescriptor(\.author)
     ]) var books: FetchedResults<Book>
+    
+    @EnvironmentObject var dataController: DataController
+    @State private var fetchedBooksList: [Book] = []
     
     @State private var showingAddScreen = false
     
@@ -56,6 +61,12 @@ struct ContentView: View {
             .sheet(isPresented: $showingAddScreen) {
                 AddBookView()
             }
+            
+            Button {
+                fetchBooks()
+            } label: {
+                Text("Fetch CoreData")
+            }
         }
     }
     
@@ -67,6 +78,17 @@ struct ContentView: View {
         
         try? moc.save()
     }
+    
+    func fetchBooks() {
+            if let fetchedBooks = dataController.fetchBooks() {
+                fetchedBooksList = fetchedBooks
+                for book in fetchedBooksList {
+                    print("Title: \(book.title!)")
+                    print("Image: \(book.genre!)")
+                }
+            }
+        }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

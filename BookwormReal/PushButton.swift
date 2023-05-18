@@ -30,6 +30,6 @@ struct PushButton: View {
 
 struct PushButton_Previews: PreviewProvider {
     static var previews: some View {
-        PushButton(title: "Push Me", isOn: .constant(false))
+        PushButton(title: "Fetch CoreData", isOn: .constant(false))
     }
 }

@@ -18,4 +18,16 @@ class DataController: ObservableObject {
             }
         }
     }
+    
+    func fetchBooks() -> [Book]? {
+            let request: NSFetchRequest<Book> = Book.fetchRequest() // Replace "Book" with the actual name of your entity
+            
+            do {
+                let books = try container.viewContext.fetch(request)
+                return books
+            } catch {
+                print("Error fetching books: \(error.localizedDescription)")
+                return nil
+            }
+        }
 }
